@@ -1,38 +1,26 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Pagina1</ion-title>
+        <ion-title>Prueba FireStore Insertar Datos</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-    <ion-card>
-        <ion-card-header>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-        </ion-card-header>
-
-        <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-item>
-            <ion-icon name="pin" slot="start"></ion-icon>
-            <ion-label>ion-item in a card, icon left, button right</ion-label>
-            <ion-button fill="outline" slot="end">View</ion-button>
-        </ion-item>
-
-        <ion-card-content>
-            This is content, without any paragraph or header tags, within an ion-card-content element.
-        </ion-card-content>
-    </ion-card>
-
+    <!-- botón de volver a HOME-->
     <ion-button routerLink="/home">
         Acceder a Home
         <ion-icon slot="end" name="star"></ion-icon>
     </ion-button>
 
+
+    <ion-item>
+        <ion-label>Título</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Descripción</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.descripcion"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="clickBotonInsertar()">Añadir Tarea</ion-button>
 
 </ion-content>
