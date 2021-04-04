@@ -11,7 +11,7 @@
         <ion-icon slot="end" name="star"></ion-icon>
     </ion-button>
 
-
+    <!-- campos de insersión de datos y botón de envío  -->
     <ion-item>
         <ion-label>Título</ion-label>
         <ion-input [(ngModel)]="tareaEditando.titulo"></ion-input>
@@ -22,5 +22,21 @@
     </ion-item>
 
     <ion-button (click)="clickBotonInsertar()">Añadir Tarea</ion-button>
+
+
+    <!-- lista de consulta de tareas -->
+    <h1>Lista de Tareas</h1>
+    <ion-list>
+        <ion-item *ngFor="let documentTarea of arrayColeccionTareas">
+            <ion-grid>
+                <ion-row>
+                    <h2>{{documentTarea.data.titulo}}</h2>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.descripcion}}</p>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
 
 </ion-content>

@@ -23,7 +23,7 @@ export class Pagina1Page implements OnInit {
     //Crear una tarea vacía al empezar
     this.tareaEditando = {} as Tarea;
     this.obtenerListaTareas();
-   }
+  }
 
 
   clickBotonInsertar(){
@@ -39,7 +39,7 @@ export class Pagina1Page implements OnInit {
 
 
   obtenerListaTareas(){
-    this.firestoreService.consultar("tareas").subscribe((resultadoConsultaTareas) => {
+    this.firestoreService.consultar("tarea").subscribe((resultadoConsultaTareas) => {
       this.arrayColeccionTareas = [];
       resultadoConsultaTareas.forEach((datosTarea: any) => {
         this.arrayColeccionTareas.push({
