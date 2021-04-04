@@ -5,19 +5,14 @@
 </ion-header>
 
 <ion-content>
-    <!-- botón de volver a HOME-->
-    <ion-button routerLink="/home">
-        Acceder a Home
-        <ion-icon slot="end" name="star"></ion-icon>
-    </ion-button>
 
     <!-- campos de insersión de datos y botón de envío  -->
     <ion-item>
-        <ion-label>Título</ion-label>
+        <ion-label>Título:</ion-label>
         <ion-input [(ngModel)]="tareaEditando.titulo"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label>Descripción</ion-label>
+        <ion-label>Descripción:</ion-label>
         <ion-input [(ngModel)]="tareaEditando.descripcion"></ion-input>
     </ion-item>
 
@@ -38,5 +33,26 @@
             </ion-grid>
         </ion-item>
     </ion-list>
+
+
+    <!-- borrar registro -->
+    <h1>Seleccionar registro para eliminar tarea</h1>
+    <ion-list>
+        <ion-item *ngFor="let documentTarea of arrayColeccionTareas" (click)="selecTarea(documentTarea)">
+            ...
+        </ion-item>
+    </ion-list>
+    <ion-button (click)="clicBotonBorrar()">Borrar tarea</ion-button>
+
+
+    <ion-button (click)="clicBotonModificar()">Modificar tarea</ion-button>
+
+
+
+    <!-- botón de volver a HOME-->
+    <ion-button routerLink="/home">
+        Volver a Home
+    </ion-button>
+
 
 </ion-content>
