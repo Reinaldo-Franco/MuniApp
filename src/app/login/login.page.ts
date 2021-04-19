@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
       if(user){
         //to do: checEmail
         const isVerified = this.authSvc.isEmailVerified(user);
-        console.log('user->', user);
+        console.log('verified->', isVerified);
       }
     } catch (error) {
       console.log('Error', error);
