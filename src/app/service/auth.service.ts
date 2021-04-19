@@ -38,14 +38,15 @@ export class AuthService {
   
   
   //iniciarsesion con google
-  async loginGoogle(): Promise<User>{
+  /*async loginGoogle(): Promise<User>{
     try {
       const {user}= await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       this.updateUserData(user);
+      return user;
     } catch (error) {
       console.log('Error->'), error();
     }
-  }
+  }*/
   
   
   //registrarse
