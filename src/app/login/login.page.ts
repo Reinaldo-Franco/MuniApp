@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
     }
   }
 
-  /*async  onLoginGoogle(){
+  async  onLoginGoogle(){
     try {
       const user = await this.authSvc.loginGoogle();
       if(user){
@@ -38,6 +38,6 @@ export class LoginPage implements OnInit {
     } catch (error) {
       console.log('Error', error);
     }
-  }*/
+  }
 
 }

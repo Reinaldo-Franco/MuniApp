@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../shared/user.interface';
 import { AngularFireAuth } from '@angular/fire/auth';
-//import { auth } from 'firebase/app';
+import * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators'
@@ -38,14 +38,14 @@ export class AuthService {
   
   
   //iniciarsesion con google
-  /*async loginGoogle(): Promise<User>{
+  async loginGoogle(): Promise<User>{
     try {
-      const {user}= await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
-      return user;
+      const {user}= await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      this.updateUserData(user);
     } catch (error) {
       console.log('Error->'), error();
     }
-  }*/
+  }
   
   
   //registrarse
