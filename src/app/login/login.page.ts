@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
@@ -7,12 +7,9 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage{
 
   constructor(private authSvc: AuthService, private router:Router) { }
-
-  ngOnInit() {
-  }
 
 
   async onLogin(email, password){
@@ -22,6 +19,7 @@ export class LoginPage implements OnInit {
       if(user){
         const isVerified = this.authSvc.isEmailVerified(user);
         console.log('verified->', isVerified);
+        this.redirectUser(isVerified);
       }
     } catch (error) {
       console.log('Error->', error)
@@ -35,6 +33,7 @@ export class LoginPage implements OnInit {
         //to do: checEmail
         const isVerified = this.authSvc.isEmailVerified(user);
         console.log('verified->', isVerified);
+        this.redirectUser(isVerified);
       }
     } catch (error) {
       console.log('Error', error);
@@ -42,12 +41,14 @@ export class LoginPage implements OnInit {
   }*/
 
 
-  redirectUser(isverified:boolean){
+  private redirectUser(isverified:boolean): void{
     if(isverified){
-      this.router.navigate(['admin']);
+      this.router.navigate(['home']);
+    }else{
+      //else verificationPage
+      this.router.navigate(['verify-email']);
     }
-    // redirect to admin
-    //else verificationPage
+    
   }
 
 }

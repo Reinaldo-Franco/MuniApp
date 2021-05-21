@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Register User</ion-title>
+        <ion-title>Registrar Usuario</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -21,9 +21,17 @@
 
         <ion-row>
             <ion-col>
-                <ion-button type="submit" (click)="onRegister(email, password)" expand="block">Registrar</ion-button>
+                <ion-button type="submit" (click)="onRegister(email, password)" expand="full">Registrar</ion-button>
             </ion-col>
         </ion-row>
     </form>
+
+    <ion-row>
+        <ion-col>
+            <p>
+                <a class="center-text" routerLink="/login">¿Ya tienes una Cuenta?</a>
+            </p>
+        </ion-col>
+    </ion-row>
 
 </ion-content>

@@ -4,8 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators'
-import { Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class AuthService {
 
 
 
-  constructor(private afAuth:AngularFireAuth, private afs: AngularFirestore) { 
+  constructor(public afAuth:AngularFireAuth, private afs: AngularFirestore) { 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if(user){
@@ -70,7 +69,7 @@ export class AuthService {
     }
   }
 
-  isEmailVerified(user: User){
+  isEmailVerified(user: User): boolean{
     return user.emailVerified ===true ? true : false;
   }
 
