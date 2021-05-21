@@ -16,7 +16,7 @@ export class AuthService {
 
 
 
-  constructor(private afAuth:AngularFireAuth, private afs: AngularFirestore, private router:Router) { 
+  constructor(private afAuth:AngularFireAuth, private afs: AngularFirestore) { 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if(user){
@@ -111,12 +111,6 @@ export class AuthService {
   }
 
 
-  redirectUser(isverified:boolean){
-    if(isverified){
-      this.router.navigate(['admin']);
-    }
-    // redirect to admin
-    //else verificationPage
-  }
+  
 
 }
