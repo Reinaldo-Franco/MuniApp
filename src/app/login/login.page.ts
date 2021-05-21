@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -39,5 +40,14 @@ export class LoginPage implements OnInit {
       console.log('Error', error);
     }
   }*/
+
+
+  redirectUser(isverified:boolean){
+    if(isverified){
+      this.router.navigate(['admin']);
+    }
+    // redirect to admin
+    //else verificationPage
+  }
 
 }
