@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class AuthService {
 
 
 
-  constructor(private afAuth:AngularFireAuth, private afs: AngularFirestore) { 
+  constructor(private afAuth:AngularFireAuth, private afs: AngularFirestore, private router:Router) { 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if(user){
@@ -107,6 +108,15 @@ export class AuthService {
     };
 
     return userRef.set(data, {merge: true});
+  }
+
+
+  redirectUser(isverified:boolean){
+    if(isverified){
+      this.router.navigate(['admin']);
+    }
+    // redirect to admin
+    //else verificationPage
   }
 
 }
