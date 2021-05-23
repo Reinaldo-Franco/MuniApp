@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { first, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -110,6 +110,8 @@ export class AuthService {
   }
 
 
-  
+  getCurrentUser(){
+    return this.afAuth.authState.pipe(first()).toPromise();
+  }
 
 }
