@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "muniapp-b0f09"
+  },
+  "targets": {
+    "muniapp-b0f09": {
+      "hosting": {
+        "app": [
+          "muniapp-b0f09"
+        ]
+      }
+    }
+  }
+}

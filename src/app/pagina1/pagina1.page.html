@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title style="text-align: center;">Solicitud</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- campos de insersión de datos y botón de envío  -->
+    <ion-item>
+        <ion-label>Título:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.titulo"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Descripción:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Apellido:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>C.I:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.cedula"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Dirección/Barrio:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.direccion"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Nro. de Celular:</ion-label>
+        <ion-input [(ngModel)]="tareaEditando.celular"></ion-input>
+    </ion-item>
+
+    <ion-button color="success" expand="full" (click)="clickBotonInsertar()">Enviar Solicitud</ion-button>
+
+
+    <!-- lista de consulta de tareas 
+    <h1>Lista de Tareas</h1>
+    <ion-list>
+        <ion-item *ngFor="let documentTarea of arrayColeccionTareas">
+            <ion-grid>
+                <ion-row>
+                    <h2>{{documentTarea.data.titulo}}</h2>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.descripcion}}</p>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.nombre}}</p>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list> -->
+
+
+    <!-- borrar registro 
+    <h1>Seleccionar registro para eliminar tarea</h1>
+    <ion-list>
+        <ion-item *ngFor="let documentTarea of arrayColeccionTareas" (click)="selecTarea(documentTarea)">
+            ...
+        </ion-item>
+    </ion-list>
+    <ion-button (click)="clicBotonBorrar()">Borrar tarea</ion-button>
+
+
+    <ion-button (click)="clicBotonModificar()">Modificar tarea</ion-button> -->
+
+
+
+    <!-- botón de volver a HOME-->
+    <ion-button color="warning" routerLink="/home">
+        Volver a Inicio
+    </ion-button>
+
+
+</ion-content>

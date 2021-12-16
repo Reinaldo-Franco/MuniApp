@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title style="text-align: center;">Lista de Solicitudes
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- lista de consulta de tareas -->
+    <ion-list>
+        <ion-item *ngFor="let documentTarea of arrayColeccionTareas">
+            <ion-grid>
+                <ion-row>
+                    <h2>{{documentTarea.data.titulo}}</h2>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.descripcion}}</p>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.nombre}}</p>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.apellido}}</p>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.cedula}}</p>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.direccion}}</p>
+                </ion-row>
+                <ion-row>
+                    <p>{{documentTarea.data.celular}}</p>
+                </ion-row>
+                <ion-button expand="full" color="primary">
+                </ion-button>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+
+    <ion-button color="success" routerLink="/home">
+        Volver a Inicio
+    </ion-button>
+
+</ion-content>
